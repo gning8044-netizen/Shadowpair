@@ -1,0 +1,21 @@
+{
+  "name": "dev-shadow-bot",
+  "version": "2.0.0",
+  "description": "🤖 𝐃𝐄𝐕 𝐒𝐇𝐀𝐃𝐎𝐖 𝐓𝐄𝐂𝐇 – Bot Telegram-WhatsApp multi-sessions",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@napi-rs/canvas": "^0.1.44",
+    "@whiskeysockets/baileys": "^6.7.0",
+    "axios": "^1.6.0",
+    "chalk": "^4.1.2",
+    "dotenv": "^16.3.1",
+    "node-telegram-bot-api": "^0.66.0",
+    "qrcode": "^1.5.3",
+    "sharp": "^0.33.2",
+    "yt-search": "^2.10.3"
+  }
+}
