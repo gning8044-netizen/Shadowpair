@@ -1,0 +1,67 @@
+module.exports = {
+  execute: async (wa, from, args, config, userId) => {
+    const helpMessage = `
+╭━━━━〔 *${config.name || '𝐃𝐄𝐕 𝐒𝐇𝐀𝐃𝐎𝐖-𝐌𝐃'}* 〕━━━━╮
+┃ 🛠️ Version: *${config.version || '1.0.0'}*
+┃ 👤 Owner: *${config.telegram.ownerId || 'Shadow'}*
+┃ 
+╰━━━━━━━━━━━━━━━━━━━━━━━╯
+
+*COMMAND LIST:*
+
+*┏━━〔 💠 𝐌𝐀𝐈𝐍 〕*
+┃ ❍ .ᴀʟɪᴠᴇ
+┃ ❍ .ᴘɪɴɢ
+┃ ❍ .ᴜᴘᴛɪᴍᴇ
+┃ ❍ .ɪɴꜰᴏ
+┗━━━━━━━━━━━━┛
+
+*┏━━〔 👥 𝐆𝐑𝐎𝐔𝐏 〕*
+┃ ❍ .ɢʀᴏᴜᴘ ᴋɪᴄᴋᴀʟʟ
+┃ ❍ .ɢʀᴏᴜᴘ ᴋɪᴄᴋ
+┃ ❍ .ɢʀᴏᴜᴘ ᴘʀᴏᴍᴏᴛᴇ
+┃ ❍ .ɢʀᴏᴜᴘ ᴅᴇᴍᴏᴛᴇ
+┃ ❍ .ᴛᴀɢ ᴀʟʟ
+┃ ❍ .ᴛᴀɢ ᴀᴅᴍɪɴ
+┃ ❍ .ɢʀᴏᴜᴘ ɢᴄʟɪɴᴋ
+┃ ❍ .ᴍᴜᴛᴇ
+┃ ❍ .ᴜɴᴍᴜᴛᴇ
+┗━━━━━━━━━━━━┛
+
+*┏━━〔 🤖 𝐀𝐈 𝐓𝐎𝐎𝐋𝐒 〕*
+┃ ❍ .ᴀɪ (via commande externe)
+┗━━━━━━━━━━━━┛
+
+*┏━━〔 📥 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 〕*
+┃ ❍ .ᴘʟᴀʏ
+┃ ❍ .ʏᴛᴠ
+┃ ❍ .ɪɴsᴛᴀɢʀᴀᴍ
+┃ ❍ .ᴛɪᴋᴛᴏᴋ
+┃ ❍ .ꜰᴀᴄᴇʙᴏᴏᴋ
+┃ ❍ .ʏᴛsᴇᴀʀᴄʜ
+┗━━━━━━━━━━━━┛
+
+*┏━━〔 🛠️ 𝐔𝐓𝐈𝐋𝐈𝐓𝐘 〕*
+┃ ❍ .ᴡᴇᴀᴛʜᴇʀ
+┃ ❍ .ᴛʀᴀɴsʟᴀᴛᴇ
+┃ ❍ .ǫʀ
+┃ ❍ .ᴘɪɴɢ
+┃ ❍ .ᴜᴘᴛɪᴍᴇ
+┗━━━━━━━━━━━━┛
+
+*┏━━〔 ⚙️ 𝐎𝐖𝐍𝐄𝐑 〕*
+┃ ❍ .ᴀɴᴛɪʟɪɴᴋ (via .group antilink)
+┃ ❍ .ʀᴇsᴇᴛᴡᴀʀɴs
+┃ ❍ .ᴄʜᴇᴄᴋᴡᴀʀɴs
+┗━━━━━━━━━━━━┛
+
+> *Généré par 𝐃𝐄𝐕 𝐒𝐇𝐀𝐃𝐎𝐖 𝐓𝐄𝐂𝐇* ✨
+`;
+    const imageUrl = 'https://files.catbox.moe/81cwte.jpeg';
+    try {
+      await wa.sendMessage(userId, from, { image: { url: imageUrl }, caption: helpMessage });
+    } catch {
+      await wa.sendMessage(userId, from, { text: helpMessage });
+    }
+  }
+};
