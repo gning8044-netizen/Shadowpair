@@ -71,7 +71,8 @@ class WhatsAppConnector {
           const command = global.whatsappCommands?.get(cmdName);
           if (command) {
             try {
-              await command.execute(this, from, cmdArgs, require('../config'), userId);
+              // AJOUT DU PARAMÈTRE senderNum EN FIN DE FONCTION
+              await command.execute(this, from, cmdArgs, require('../config'), userId, senderNum);
             } catch (err) {
               console.error(`[WA] Erreur commande ${cmdName}:`, err);
               await this.sendMessage(userId, from, { text: '❌ Erreur lors de l’exécution.' });
