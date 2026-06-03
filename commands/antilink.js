@@ -26,7 +26,7 @@ let isListenerAttached = false;
 
 module.exports = {
   name: 'antilink',
-  description: 'Gère l\'Antilink avec un système de 3 avertissements avant bannissement.',
+  description: 'Gère l\'𝐴𝑁𝑇𝐼𝐿𝐼𝑁𝐾 3 𝐴𝑉𝐸𝑅𝑇𝐼𝑆𝑆𝐸𝑀𝐸𝑁𝑇 𝐴𝑉𝐴𝑁𝑇 𝐿𝐸 𝐷𝐸́𝐺𝐴𝐺𝐸𝑀𝐸𝑁𝑇.',
 
   // --- 1. CONFIGURATION (.antilink on / off) ---
   async execute(connector, from, args, config, userId) {
@@ -49,8 +49,8 @@ module.exports = {
       writeDB(db);
 
       const statusText = action === 'on' 
-        ? '*SYSTEME ANTILINK ACTIVÉ*\n\nChaque membre a droit à 3 avertissements pour envoi de lien avant d\'être banni définitivement.'
-        : '*SYSTEME ANTILINK DÉSACTIVÉ*';
+        ? '*𝑆𝑌𝑆𝑇𝐸𝑀𝐸 𝐴𝑁𝑇𝐼𝐿𝐼𝑁𝐾 𝑂𝑁*\n\n𝐶𝐻𝐴𝐶𝑈𝑁 𝐸𝑁𝑇𝑅𝐸 𝑉𝑂𝑈𝑆 𝐴 3 𝐴𝑉𝐸𝑅𝑇𝐼𝑆𝑆𝐸𝑀𝐸𝑁𝑇 𝐴𝑉𝐴𝑁𝑇 𝐷\'𝐸𝑇𝑅𝐸 𝐷𝐸́𝐺𝐴𝐺𝐸𝑍 𝐷𝐸́𝐹𝐼𝑁𝐼𝑇𝐼𝑉𝐸𝑀𝐸𝑁𝑇.'
+        : '*𝑆𝑌𝑆𝑇𝐸𝑀𝐸 𝐴𝑁𝑇𝐼𝐿𝐼𝑁𝐾 𝑂𝐹𝐹*';
 
       await connector.sendMessage(userId, from, { text: statusText });
 
@@ -121,13 +121,13 @@ module.exports = {
             // Sauvegarde et avertissement (1/3 ou 2/3)
             writeDB(db);
             await sock.sendMessage(chatJid, {
-              text: `⚠️ *AVERTISSEMENT ANTILINK* ⚠️\n\n@${senderNum}, les liens sont interdits ici !\n\nNiveau d'alerte : *${currentWarns}/3*\n_À 3 avertissements, vous serez banni._`,
+              text: `️𝐴𝑉𝐸𝑅𝑇𝐼𝑆𝑆𝐸𝑀𝐸𝑁𝑇* ⚠️\n\n@${senderNum}, 𝐻𝑈𝑀𝐴𝐼𝑁 𝐼𝐶𝐼 𝑂𝑁 𝐼𝑁𝑇𝐸𝑅𝐷𝐼𝑇 𝐷𝐸𝑆 𝐿𝐼𝐸𝑁𝑆 !\n\n𝑁𝐼𝑉𝐸𝐴𝑈 𝐴𝐿𝐸𝑅𝑇 : *${currentWarns}/3*\n_À 3 𝐴𝑉𝐸𝑅𝑇𝐼𝑆𝑆𝐸𝑀𝐸𝑁𝑇 𝐿𝐼𝑀𝐼𝑇𝐸, 𝐷𝐸́𝐺𝐴𝐺𝐸 𝐷𝐸 𝑀𝑂𝑁 𝐶𝐻𝐸𝑀𝐼𝑁 𝐹𝐴𝐼𝐵𝐿𝐸._`,
               mentions: [sender]
             });
           } else {
             // Seuil des 3 avertissements atteint -> ACTION DE BANNISEMENT IMMÉDIATE
             await sock.sendMessage(chatJid, {
-              text: `🚨 *EXCLUSION ANTILINK (3/3)* 🚨\n\n@${senderNum} a ignoré tous les avertissements. Expulsion définitive du groupe en cours...`,
+              text: `🚨 *𝐶𝐸𝑆𝑇 𝐿𝐸𝑈𝑅 𝐷𝐸 𝐷𝐸𝐺𝐴𝐺𝐸𝑅 𝐼𝐶𝐼 𝐹𝐴𝐼𝐵𝐿𝐸 (3/3)* 🚨\n\n@${senderNum} 𝑇𝑈 𝐼𝐺𝑁𝑂𝑅𝐸 𝐿𝐸𝑆 𝐴𝑉𝐸𝑅𝑇𝐼𝑆𝑆𝐸𝑀𝐸𝑁𝑇𝑆. 𝐷𝐸𝐺𝐴𝐺𝐸𝑅 𝐷𝐸́𝐹𝐼𝑁𝐼𝑇𝐼𝑉𝐸𝑀𝐸𝑁𝑇 𝐸𝑁 𝐶𝑂𝑈𝑅...`,
               mentions: [sender]
             });
 
