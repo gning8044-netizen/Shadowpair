@@ -1,9 +1,9 @@
 module.exports = {
   execute: async (wa, from, args, config, userId) => {
     const helpMessage = `
-╭━━━━〔 *${config.name || '𝐃𝐄𝐕 𝐒𝐇𝐀𝐃𝐎𝐖-𝐌𝐃'}* 〕━━━━╮
+╭━━━━〔 *${config.name || '𝐵𝑂𝑇 𝐷𝐸𝑉 𝑆𝐻𝐴𝐷𝑂𝑊-𝑃𝐴𝐼𝑅'}* 〕━━━━╮
 ┃ 🛠️ Version: *${config.version || '1.0.0'}*
-┃ 👤 Owner: *${config.telegram.ownerId || 'Shadow'}*
+┃ 👤 Owner: *${config.telegram.ownerId || '𝐷𝐸𝑉 𝑆𝐻𝐴𝐷𝑂𝑊 𝑇𝐸𝐶𝐻'}*
 ┃ 
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯
 
@@ -55,9 +55,9 @@ module.exports = {
 ┃ ❍ .ᴄʜᴇᴄᴋᴡᴀʀɴs
 ┗━━━━━━━━━━━━┛
 
-> *Généré par 𝐃𝐄𝐕 𝐒𝐇𝐀𝐃𝐎𝐖 𝐓𝐄𝐂𝐇* ✨
+> *𝑃𝑂𝑊𝑅𝐸𝐷 𝐵𝑌: 𝐷𝐸𝑉 𝑆𝐻𝐴𝐷𝑂𝑊 𝑇𝐸𝐶𝐻* 🪢
 `;
-    const imageUrl = 'https://files.catbox.moe/81cwte.jpeg';
+    const imageUrl = 'https://files.catbox.moe/0mr2zl.jpg';
     try {
       await wa.sendMessage(userId, from, { image: { url: imageUrl }, caption: helpMessage });
     } catch {
