@@ -18,7 +18,7 @@ async function pingCommand(thisConnector, from, args, config, userId, senderNum)
 
         const response = `
 ╔════════════════════╗
-║     *𝐃𝐄𝐕 𝐒𝐇𝐀𝐃𝐎𝐖 𝐓𝐄𝐂𝐇* ║
+║     *𝐷𝐸𝑉 𝑆𝐻𝐴𝐷𝑂𝑊 𝑇𝐸𝐶𝐻* ║
 ╚════════════════════╝
 
 📡 *𝘚𝘗𝘌𝘌𝘋* : \`${speed} ms\`
@@ -26,13 +26,13 @@ async function pingCommand(thisConnector, from, args, config, userId, senderNum)
 🧠 *𝘙𝘈𝘔* : \`${freeMem}MB / ${totalMem}MB\`
 💻 *𝘗𝘓𝘈𝘛𝘍𝘖𝘙𝘔𝘌* : \`${os.platform()}\`
 
-— _Propulsé par le système SHADOW PRIME_
+— _𝑃𝑂𝑊𝑅𝐸𝐷 𝐵𝑌: 𝐷𝐸𝑉 𝑆𝐻𝐴𝐷𝑂𝑊 𝑇𝐸𝐶𝐻_
 `.trim();
 
         await thisConnector.sendMessage(userId, from, { text: response });
     } catch (err) {
         console.error(err);
-        await thisConnector.sendMessage(userId, from, { text: '❌ *𝐃𝐄𝐕 𝐒𝐇𝐀𝐃𝐎𝐖 𝐓𝐄𝐂𝐇* • Erreur lors du ping.' });
+        await thisConnector.sendMessage(userId, from, { text: '❌ *𝐷𝐸𝑉 𝑆𝐻𝐴𝐷𝑂𝑊 𝑇𝐸𝐶𝐻* • Erreur lors du ping.' });
     }
 }
 
